@@ -1,6 +1,11 @@
+[fmt]
+line_length = 80
+
 [profile.default]
 src = "src"
 out = "out"
 libs = ["lib"]
+optimizer = true
+optimizer_runs = 20_000
 
 # See more config options https://github.com/foundry-rs/foundry/tree/master/config

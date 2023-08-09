@@ -241,13 +241,19 @@ library PgpParser {
 
             if (0 == lengthType) {
                 length = uint8(self.raw[self.offset++]);
-            } else if (1 == lengthType) {
+            } 
+            
+            if (1 == lengthType) {
                 length = BytesLib.toUint16(self.raw, self.offset);
                 self.offset += 2;
-            } else if (2 == lengthType) {
+            } 
+            
+            if (2 == lengthType) {
                 length = BytesLib.toUint32(self.raw, self.offset);
                 self.offset += 4;
-            } else if (3 == lengthType) {
+            } 
+            
+            if (3 == lengthType) {
                 revert PartialBody(self.offset);
             } else {
                 assert(false);
